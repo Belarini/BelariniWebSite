@@ -1,11 +1,9 @@
 "use client";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import dynamic from "next/dynamic";
 
-// Charger dynamiquement LeafletMapComponent en désactivant le SSR
+// Charger dynamiquement LeafletMapComponent avec SSR désactivé
 const LeafletMapComponent = dynamic(
   () => import("../components/leafletMaps"),
   { ssr: false }
@@ -19,20 +17,27 @@ export default function ContactPage() {
   });
   const [status, setStatus] = useState("");
 
+  // Import dynamique de gsap et ScrollTrigger dans useEffect
   useEffect(() => {
-    // Enregistre le plugin dans useEffect pour qu'il s'exécute côté client uniquement
-    gsap.registerPlugin(ScrollTrigger);
+    async function initGsap() {
+      const gsapModule = await import("gsap");
+      const ScrollTriggerModule = await import("gsap/ScrollTrigger");
+      const gsap = gsapModule.default;
+      const ScrollTrigger = ScrollTriggerModule.default;
+      gsap.registerPlugin(ScrollTrigger);
 
-    gsap.to(".moveTitle", {
-      y: -300,
-      opacity: 0,
-      scrollTrigger: {
-        trigger: ".moveTitle",
-        start: "top 10%",
-        end: "bottom 30%",
-        scrub: 0.5,
-      },
-    });
+      gsap.to(".moveTitle", {
+        y: -300,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: ".moveTitle",
+          start: "top 10%",
+          end: "bottom 30%",
+          scrub: 0.5,
+        },
+      });
+    }
+    initGsap();
   }, []);
 
   const handleChange = (e) => {
@@ -70,7 +75,6 @@ export default function ContactPage() {
       <div className="pt-[16vh]">
         <div className="relative">
           <div className="fixed w-screen h-[50vh] -z-10">
-            {/* Utilisation de fill et style pour remplacer layout et objectFit */}
             <Image
               className="opacity-80"
               src="/foret_contact.jpg"
@@ -102,7 +106,7 @@ export default function ContactPage() {
         </div>
         <div className="flex flex-col sm:flex-row bg-white z-20">
           <div className="flex flex-col sm:w-1/2 sm:p-20 p-10">
-            {/* Utilisation du composant HTML <form> */}
+            {/* Utilisation d'un formulaire HTML */}
             <form
               className="flex gap-3 flex-col text-xl"
               onSubmit={handleSubmit}
