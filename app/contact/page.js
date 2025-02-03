@@ -1,27 +1,27 @@
 "use client"
 import Image from "next/image";
 // import Form from 'next/form';
-import gsap from "gsap";
+// import gsap from "gsap";
 import { useState, useEffect } from "react";
-import ScrollTrigger from "gsap/ScrollTrigger";
+// import ScrollTrigger from "gsap/ScrollTrigger";
 import LeafletMapComponent from "../components/leafletMaps";
 
 export default function page() {
 
-    gsap.registerPlugin(ScrollTrigger);
+    // gsap.registerPlugin(ScrollTrigger);
 
-    useEffect(() => {
-        gsap.to('.moveTitle', {
-            y: -300,
-            opacity: 0,
-            scrollTrigger: {
-                trigger: ".moveTitle",
-                start: "top 10%",
-                end: "bottom 30%",
-                scrub: .5,
-            }
-        })
-    }, []);
+    // useEffect(() => {
+    //     gsap.to('.moveTitle', {
+    //         y: -300,
+    //         opacity: 0,
+    //         scrollTrigger: {
+    //             trigger: ".moveTitle",
+    //             start: "top 10%",
+    //             end: "bottom 30%",
+    //             scrub: .5,
+    //         }
+    //     })
+    // }, []);
 
     const [formData, setFormData] = useState({
         name: "",
@@ -40,24 +40,24 @@ export default function page() {
     const handleSubmit = async (e) => {
         // e.preventDefault();   
         setStatus("Envoi en cours...");
-        // try {
-        //     const response = await fetch("http://localhost:5000/api/contact", {
-        //         method: "POST",
-        //         headers: {
-        //             "Content-Type": "application/json",
-        //         },
-        //         body: JSON.stringify(formData),
-        //     });
+        try {
+            const response = await fetch("http://localhost:5000/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
 
-        //     if (response.ok) {
-        //         setStatus("Message envoyé avec succès !");
-        //         setFormData({ name: "", email: "", message: "" });
-        //     } else {
-        //         setStatus("Erreur lors de l'envoi du message.");
-        //     }
-        // } catch (error) {
-        //     setStatus("Erreur de réseau.");
-        // }
+            if (response.ok) {
+                setStatus("Message envoyé avec succès !");
+                setFormData({ name: "", email: "", message: "" });
+            } else {
+                setStatus("Erreur lors de l'envoi du message.");
+            }
+        } catch (error) {
+            setStatus("Erreur de réseau.");
+        }
     };
 
     return (
