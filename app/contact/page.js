@@ -41,7 +41,7 @@ export default function page() {
         // e.preventDefault();   
         setStatus("Envoi en cours...");
         try {
-            const response = await fetch("http://localhost:5000/api/contact", {
+            const response = await fetch("https://belarini-ogrxad6y8-truffenoires-projects.vercel.app/api/contact", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
