@@ -1,15 +1,9 @@
 "use client"
 import Image from "next/image";
-// import Form from 'next/form';
 import gsap from "gsap";
 import { useState, useEffect } from "react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import LeafletMapComponent from "../components/leafletMaps";
-
-// const LeafletMapComponentNoSSR = dynamic(
-//     () => import('../components/BrowserOnlyComponent'),
-//     { ssr: false }
-//   )
    
 export default function page() {
 
@@ -43,26 +37,26 @@ export default function page() {
     };
 
     const handleSubmit = async (e) => {
-        // e.preventDefault();   
+        e.preventDefault();   
         setStatus("Envoi en cours...");
-        // try {
-        //     const response = await fetch("http://localhost:5000/api/contact", {
-        //         method: "POST",
-        //         headers: {
-        //             "Content-Type": "application/json",
-        //         },
-        //         body: JSON.stringify(formData),
-        //     });
+        try {
+            const response = await fetch("http://localhost:5000/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
 
-        //     if (response.ok) {
-        //         setStatus("Message envoyé avec succès !");
-        //         setFormData({ name: "", email: "", message: "" });
-        //     } else {
-        //         setStatus("Erreur lors de l'envoi du message.");
-        //     }
-        // } catch (error) {
-        //     setStatus("Erreur de réseau.");
-        // }
+            if (response.ok) {
+                setStatus("Message envoyé avec succès !");
+                setFormData({ name: "", email: "", message: "" });
+            } else {
+                setStatus("Erreur lors de l'envoi du message.");
+            }
+        } catch (error) {
+            setStatus("Erreur de réseau.");
+        }
     };
 
     return (
