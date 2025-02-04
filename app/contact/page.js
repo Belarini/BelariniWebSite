@@ -3,8 +3,13 @@ import Image from "next/image";
 import gsap from "gsap";
 import { useState, useEffect } from "react";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import LeafletMapComponent from "../components/leafletMaps";
-   
+// import LeafletMapComponent from "../components/leafletMaps";
+
+const LeafletMapComponentNoSSR = dynamic(
+    () => import('../components/BrowserOnlyComponent'),
+    { ssr: false }
+  )
+    
 export default function page() {
 
     gsap.registerPlugin(ScrollTrigger);
@@ -114,7 +119,7 @@ export default function page() {
                         {status && <p className="mt-4 text-sm">{status}</p>}
                     </div>
                     <div className="flex flex-col sm:w-1/2">
-                        <LeafletMapComponent />
+                        <LeafletMapComponentNoSSR />
                     </div>
                 </div>
             </div>
