@@ -6,7 +6,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 // import LeafletMapComponent from "../components/leafletMaps";
 
 const LeafletMapComponentNoSSR = dynamic(
-    () => import('../components/BrowserOnlyComponent'),
+    () => import('../components/leafletMaps'),
     { ssr: false }
   )
     
