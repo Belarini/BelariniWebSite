@@ -1,11 +1,16 @@
 "use client"
 import Image from "next/image";
-import Form from 'next/form';
+// import Form from 'next/form';
 import gsap from "gsap";
 import { useState, useEffect } from "react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import LeafletMapComponent from "../components/leafletMaps";
 
+// const LeafletMapComponentNoSSR = dynamic(
+//     () => import('../components/BrowserOnlyComponent'),
+//     { ssr: false }
+//   )
+   
 export default function page() {
 
     gsap.registerPlugin(ScrollTrigger);
@@ -40,24 +45,24 @@ export default function page() {
     const handleSubmit = async (e) => {
         // e.preventDefault();   
         setStatus("Envoi en cours...");
-        try {
-            const response = await fetch("http://localhost:5000/api/contact", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(formData),
-            });
+        // try {
+        //     const response = await fetch("http://localhost:5000/api/contact", {
+        //         method: "POST",
+        //         headers: {
+        //             "Content-Type": "application/json",
+        //         },
+        //         body: JSON.stringify(formData),
+        //     });
 
-            if (response.ok) {
-                setStatus("Message envoyé avec succès !");
-                setFormData({ name: "", email: "", message: "" });
-            } else {
-                setStatus("Erreur lors de l'envoi du message.");
-            }
-        } catch (error) {
-            setStatus("Erreur de réseau.");
-        }
+        //     if (response.ok) {
+        //         setStatus("Message envoyé avec succès !");
+        //         setFormData({ name: "", email: "", message: "" });
+        //     } else {
+        //         setStatus("Erreur lors de l'envoi du message.");
+        //     }
+        // } catch (error) {
+        //     setStatus("Erreur de réseau.");
+        // }
     };
 
     return (
@@ -81,7 +86,7 @@ export default function page() {
                 <div className="self-start p-2 text-sm border-b-2 bg-white z-20 font-serif">Avec notre formulaire :</div>
                 <div className='flex flex-col sm:flex-row bg-white z-20'>
                     <div className="flex flex-col  sm:w-1/2 sm:p-20 p-10">
-                        <Form className="flex gap-3 flex-col text-xl" action={handleSubmit}>
+                        <form className="flex gap-3 flex-col text-xl" action={handleSubmit}>
                             <label htmlFor="name" className="font-bold">Nom <span className="text-red-500">*</span></label>
                             <input
                                 className="border-2 pl-4 md:w-2/3"
@@ -111,7 +116,7 @@ export default function page() {
                                 onChange={handleChange}
                             />
                             <button className="w-max py-2 px-4 m-4 rounded-full bg-gray-100 hover:bg-gray-200" type="submit">Envoyer</button>
-                        </Form>
+                        </form>
                         {status && <p className="mt-4 text-sm">{status}</p>}
                     </div>
                     <div className="flex flex-col sm:w-1/2">

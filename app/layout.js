@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "BELARINI",
-  description: "Entreprise Belarini",
+  description: "la société belarini vous propose ses services dans plusieurs domaines notamment l’espace vert ainsi que le terrasement",
 };
 
 
@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased dark:bg-white dark:text-black`}
       >
         <Menu />
         {children}

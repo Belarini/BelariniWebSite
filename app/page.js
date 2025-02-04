@@ -7,7 +7,9 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 export default function Header() {
 
-  const refImg = useRef(null);
+  const ulRef = useRef(null);
+  const ul2Ref = useRef(null);
+  const ul3Ref = useRef(null);
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
@@ -23,140 +25,128 @@ export default function Header() {
         scrub: .5,
       }
     })
-
-    gsap.from(".box", {
-      y: 150,
+    // if (ulRef.current) {
+    gsap.from(ulRef.current.querySelectorAll("li"), {
       opacity: 0,
+      y: 50,
       duration: 1,
+      stagger: 0.2,
+      // scrollTrigger: {
+      //   trigger: ulRef.current,
+      //   start: "top 80%",
+      //   end: "bottom 20%",
+      //   toggleActions: "play none none none",
+      // },
     });
-
-    let st_box1 = ScrollTrigger.create({
-      trigger: ".box1",
-      start: "top 70%",
-      end: "bottom 80%",
-      // markers: true,
-      // toggleActions: "play reverse play reverse"
-    });
-    gsap.from(".box1", {
-      y: 150,
+    // }
+    // if (ul2Ref.current) {
+    gsap.from(ul2Ref.current.querySelectorAll("li"), {
       opacity: 0,
-      duration: .5,
-      opacity: 1,
-      scrollTrigger: st_box1
+      y: 50,
+      duration: 1,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: ulRef.current,
+        start: "top 80%",
+        end: "bottom 20%",
+        toggleActions: "play none none none",
+      },
     });
+    // }
 
-    let st_box2 = ScrollTrigger.create({
-      trigger: ".box2",
-      start: "top 70%",
-      end: "bottom 80%",
-      // markers: true,
-      // toggleActions: "play reverse play reverse"
-    });
-    gsap.fromTo(".box2", { y: -150, opacity: 0 }, { y: 0, opacity: 1, scrollTrigger: st_box2 });
 
-    let st_box3 = ScrollTrigger.create({
-      trigger: ".box3",
-      start: "top 90%",
-      end: "bottom 80%",
-      // markers: true,
-    });
-
-    gsap.fromTo(".box3", { y: -150, opacity: 0 }, { y: 0, opacity: 1, scrollTrigger: st_box3 });
-    gsap.fromTo(".box4", { y: -150, opacity: 0 }, { y: 0, opacity: 1, scrollTrigger: st_box3 });
   }, []);
 
 
   return (
-    <div className="flex items-center flex-col">
-      <div className="fixed w-screen h-[50vh] -z-10">
-        <Image className="opacity-80" src={"/la_foret.jpg"} alt="la fôret" objectFit="cover" layout="fill" />
-        <div className='moveTitle flex flex-col font-serif z-10 h-full w-full justify-center items-center text-3xl lg:text-5xl text-white'>
-          <h3 className="z-10 uppercase mt-20">Nos réalisation</h3>
-        </div>
-      </div>
-      <section className="mt-[50vh] bg-white z-20 w-full flex flex-col items-center">
-        <div className="sm:px-6 sm:w-[80vw] w-screen sm:my-4">
-          {/* <h3 className="font-serif p-4 shadow-sm text-3xl border-b-2 border-black m-6">PEYPIN</h3> */}
-          <div className="flex justify-between">
-            <h3 className="font-serif p-4 shadow-sm text-3xl border-b-2 border-black m-6">AVANT</h3>
-            <h3 className="hidden lg:block font-serif p-4 shadow-sm text-3xl border-b-2 border-black m-6">APRES</h3>
+    <div className="flex items-center flex-col relative">
+      <section className="pt-[18vh] z-10 w-full flex flex-col items-center">
+        <h1 className="font-serif text-gray-900 font-bold text-4xl uppercase p-4 m-4 border-b-2 border-black">espaces verts</h1>
+        <div className="w-full lg:pl-6 bg-white">
+          <h4 className="font-serif font-bold p-4 m-2 text-xl border-b-2 border-black max-w-max">notre savoir faire :</h4>
+          <div className="lg:flex flex-row-reverse lg:justify-around items-center p-4">
+            <div className="m-2 rounded-lg shadow-[1px_1px_13px_black]">
+              <Image
+                className="opacity-80 object-cover rounded-lg"
+                src={'/escalier_jardin.jpg'}
+                alt="Espaces verts"
+                width={800}
+                height={400}
+              />
+            </div>
+            <div className="text-center p-6 lg:text-start">
+              <ul className="list-disc pl-6" ref={ulRef}>
+                <li className="py-2 text-lg">démontage d’arbres🌴</li>
+                <li className="py-2 text-lg">entretien de jardins ♻</li>
+                <li className="py-2 text-lg">création de jardin</li>
+                <li className="py-2 text-lg">broyage</li>
+                <li className="py-2 text-lg">débroussaillage</li>
+                <li className="py-2 text-lg">tonte de gazon</li>
+                <li className="py-2 text-lg">élagage</li>
+                <li className="py-2 text-lg">taille de haie</li>
+              </ul>
+            </div>
           </div>
-          <article className="lg:flex lg:justify-between gap-3 h-[30%] p-4">
-            {/* <div className="sm:w-1/2">Texte un peu long mais le lorem ipsum ne marche plus ca casse les couilles ....</div> */}
-            <div className="lg:w-2/4 h-[30vh] shadow-[1px_1px_13px_black] my-4 rounded-xl box">
-              <Image
-                src={"/avant.jpg"}
-                alt="escalier bois jardin"
-                className="rounded-xl"
-                objectFit="cover"
-                layout="fill"
-              />
+          <div>
+            <div className="lg:flex flex-row-reverse">
+              <h4 className="font-serif font-bold p-4 m-2 lg:mr-20 text-xl border-b-2 border-black max-w-max">Aménagements extérieurs 🏗</h4>
             </div>
-            <div className="font-serif p-4 m-4 justify-center text-center">
-              Réfection d'un <br /> chemin d'accès
+            <div className="lg:flex lg:justify-around items-center">
+              <div className="m-4 rounded-lg max-h-[400px] overflow-hidden shadow-[1px_1px_13px_black]">
+                <Image
+                  className="opacity-80 object-cover rounded-lg"
+                  src={'/boulodrome_fini.jpg'}
+                  alt="Boulodrome"
+                  width={800}
+                  height={400}
+                />
+              </div>
+              <ul className="list-disc pl-6" ref={ul2Ref}>
+                <li className="py-2 text-lg">Terrain de boules</li>
+                <li className="py-2 text-lg">Enrochements</li>
+                <li className="py-2 text-lg">Création chemin d'acces</li>
+                <li className="py-2 text-lg">Enlevement de souches</li>
+                <li className="py-2 text-lg">Piscine</li>
+                <li className="py-2 text-lg">Pose de clôtures</li>
+                <li className="py-2 text-lg">Mur en pierre sèche</li>
+                <li className="py-2 text-lg">Pose de gazon</li>
+                <li className="py-2 text-lg">Pose terrasse en bois</li>
+                <li className="py-2 text-lg">Arrosage automatique</li>
+                <li className="py-2 text-lg">Abris voiture</li>
+              </ul>
             </div>
-            <div className="lg:hidden flex justify-between">
-              <h3 className="lg:hidden self-end font-serif p-4 shadow-sm text-3xl border-b-2 border-black m-6">APRES</h3>
-            </div>
-            <div className="lg:w-2/4 h-[30vh] shadow-[1px_1px_13px_black] my-4 rounded-xl box1">
-              <Image
-                src={"/apres.jpg"}
-                alt="escalier bois jardin"
-                className="rounded-xl"
-                objectFit="cover"
-                layout="fill"
-              />
-            </div>
-            {/* <div className="relative sm:w-1/2 h-[30vh] shadow-[1px_1px_13px_black] my-4 rounded-xl box overflow-x-hidden">
-              <Image
-                src={"/escalier_jardin.jpg"}
-                alt="escalier bois jardin"
-                className="rounded-xl"
-                objectFit="cover"
-                layout="fill"
-              />
-            </div> */}
-          </article>
+          </div>
         </div>
-        <div className="flex flex-col sm:px-6 sm:w-[80vw] sm:my-4">
-          <h3 className="font-serif p-4 shadow-sm text-3xl border-b-2 border-black m-6 text-end uppercase">boulodrome</h3>
-          <article className="lg:flex justify-center items-center gap-3 h-[30%] p-4">
-            <div className="lg:w-2/4 h-[30vh] rounded-xl shadow-[1px_1px_13px_black] my-4 box2">
-              <Image
-                src={"/pelle_boulodrome.jpg"}
-                alt="boulodrome jardin"
-                className="rounded-xl"
-                objectFit="cover"
-                layout="fill"
-              />
-            </div>
-            <div className="lg:w-1/5 m-4">Aménagement de jardin, réalisation de murs en pierre seches, boulodrome, piscine...</div>
-            <div className="lg:w-2/4 h-[30vh] rounded-xl shadow-[1px_1px_13px_black] my-4 box3">
-              <Image
-                src={"/boulodrome_fini.jpg"}
-                alt="boulodrome jardin"
-                className="rounded-xl"
-                objectFit="cover"
-                objectPosition="top"
-                layout="fill"
-              />
-            </div>
-          </article>
-        </div>
-        <div className="sm:px-6 sm:w-[80vw] sm:my-4">
-          <h3 className="font-serif p-4 shadow-sm text-3xl border-b-2 border-black m-6">AUBAGNE</h3>
-          <article className="lg:flex justify-center items-center gap-3 h-[30%] p-4">
-            <div className="lg:w-1/2">Texte un peu long mais le lorem ipsum ne marche plus ca casse les couilles ....</div>
-            <div className="relative lg:w-1/2 h-[30vh] shadow-[1px_1px_13px_black] my-4 rounded-xl box4">
-              <Image
-                src={"/terrassement.webp"}
-                alt="engin réalisant un terrassement"
-                className="rounded-xl"
-                objectFit="cover"
-                layout="fill"
-              />
-            </div>
-          </article>
+      </section>
+      <section className="w-full flex flex-col items-center">
+        <h1 className="font-serif text-gray-900 font-bold text-4xl uppercase p-4 m-4 border-b-2 border-black">Terrassement</h1>
+        <div className="lg:flex w-full justify-around lg:pl-6 bg-white">
+          <div>
+            {/* <h4 className="font-serif font-bold p-4 m-2 text-xl">notre savoir faire :</h4> */}
+            <ul className="list-disc p-4 pl-6">
+              <li className="py-2">Fondation habitation</li>
+              <li className="py-2">Nivellement de terrain</li>
+              <li className="py-2">Réalisation emplacement piscine</li>
+              <li className="py-2">V.R.D</li>
+              <li className="py-2">Fosse septique</li>
+            </ul>
+            <p className="text-lg font-serif pl-4">Evacuation :</p>
+            <ul className="list-disc p-6">
+              <li className="py-2">Végétaux</li>
+              <li className="py-2">Terre</li>
+              <li className="py-2">Gravats</li>
+              <li className="py-2">D.I.B</li>
+            </ul>
+          </div>
+          <div className="m-4 rounded-lg max-h-[400px] overflow-hidden shadow-[1px_1px_13px_black]">
+            <Image
+              className="opacity-80 object-cover rounded-lg"
+              src={'/terrassement.webp'}
+              alt="terrassement"
+              width={800}
+              height={400}
+            />
+          </div>
         </div>
       </section>
     </div>
