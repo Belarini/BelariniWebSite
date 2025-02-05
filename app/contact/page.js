@@ -12,7 +12,7 @@ const LeafletMapComponentNoSSR = dynamic(
   )
     
 export default function page() {
-
+    let i = 0;
     gsap.registerPlugin(ScrollTrigger);
 
     useEffect(() => {
@@ -43,7 +43,7 @@ export default function page() {
     };
 
     const handleSubmit = async (e) => {
-        e.preventDefault();   
+        e.preventDefault();
         setStatus("Envoi en cours...");
         try {
             const response = await fetch("http://localhost:5000/api/contact", {
