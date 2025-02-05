@@ -31,24 +31,6 @@ export default function page() {
 
     }, []);
 
-    // useEffect(() => {
-    //     if (tasks.length > 0) {
-    //         gsap.from(".box", {
-    //             y: 150,
-    //             opacity: 0,
-    //             duration: .5,
-    //             stagger: .2,
-    //             // scrollTrigger: {
-    //             //     trigger: ".box",
-    //             //     start: "top 125%",
-    //             //     // markers: true,
-    //             //     end: "bottom 10%",
-    //             //     scrub: 1,
-    //             // }
-    //         });
-    //     }
-    // }, [tasks]);
-
     return (
         <div className="">
             <div className="fixed w-screen h-[45vh] -z-10">
@@ -64,7 +46,7 @@ export default function page() {
                             <h2 className="font-serif max-w-max p-4 shadow-sm text-3xl border-b-2 border-black m-6">{task.title}</h2>
                             <div className="justify-self-center flex w-full lg:w-2/3 h-[30vh] rounded-xl shadow-[1px_1px_13px_black] my-4 relative box">
                                 <Image
-                                    src={`/uploads/${task.imageUrl}`}
+                                    src={`${task.imageUrl}`}
                                     className="rounded-xl object-cover"
                                     alt={task.title}
                                     fill

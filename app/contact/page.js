@@ -43,10 +43,11 @@ export default function page() {
     };
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         setStatus("Envoi en cours...");
         try {
-            const response = await fetch("http://localhost:5000/api/contact", {
+            const response = await fetch("/api/contact", {
+            // const response = await fetch("http://localhost:5000/api/contact", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

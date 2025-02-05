@@ -23,7 +23,7 @@ export default function Menu() {
                 <Link className="w-[150px] text-center p-3 border-[3px] border-transparent hover:border-black" href={'/task'}>Travaux</Link>
                 <Link className="w-[150px] text-center p-3 border-[3px] border-transparent hover:border-black" href={'/contact'}>Contact</Link>
                 <div className="flex items-center">
-                    <Link className=" text-center p-3 border-[3px] border-transparent hover:border-black" href={'/service'}><RiAdminFill /></Link>
+                    <Link className=" text-center p-3 border-[3px] border-transparent hover:border-black" href={'/admin'}><RiAdminFill /></Link>
                 </div>
             </ul>
             <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
@@ -35,7 +35,7 @@ export default function Menu() {
                     <Link onClick={() => setIsOpen(false)} className="w-[150px] text-center p-3 border-[3px] border-transparent hover:border-black" href={'/task'}>Travaux</Link>
                     <Link onClick={() => setIsOpen(false)} className="w-[150px] text-center p-3 border-[3px] border-transparent hover:border-black" href={'/contact'}>Contact</Link>
                     <div>
-                        <Link onClick={() => setIsOpen(false)} className="w-[150px] text-center p-3 border-[3px] border-transparent hover:border-black" href={'/service'}><RiAdminFill /></Link>
+                        <Link onClick={() => setIsOpen(false)} className="w-[150px] text-center p-3 border-[3px] border-transparent hover:border-black" href={'/admin'}><RiAdminFill /></Link>
                     </div>
                 </ul>
             </div>
