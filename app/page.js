@@ -10,6 +10,7 @@ export default function Header() {
   const ulRef = useRef(null);
   const ul2Ref = useRef(null);
   const ul3Ref = useRef(null);
+  const ul4Ref = useRef(null);
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
@@ -29,7 +30,7 @@ export default function Header() {
     gsap.from(ulRef.current.querySelectorAll("li"), {
       opacity: 0,
       y: 50,
-      duration: 1,
+      // duration: 1,
       stagger: 0.2,
       // scrollTrigger: {
       //   trigger: ulRef.current,
@@ -38,16 +39,43 @@ export default function Header() {
       //   toggleActions: "play none none none",
       // },
     });
+    gsap.from(ul3Ref.current.querySelectorAll("li"), {
+      opacity: 0,
+      y: 50,
+      // duration: 1,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: ul3Ref.current,
+        start: "top 80%",
+        // markers: true,
+        end: "bottom 20%",
+        toggleActions: "play none none none",
+      },
+    });
     // }
     // if (ul2Ref.current) {
     gsap.from(ul2Ref.current.querySelectorAll("li"), {
       opacity: 0,
       y: 50,
-      duration: 1,
+      // duration: 1,
       stagger: 0.2,
       scrollTrigger: {
-        trigger: ulRef.current,
+        trigger: ul2Ref.current,
         start: "top 80%",
+        // markers: true,
+        end: "bottom 20%",
+        toggleActions: "play none none none",
+      },
+    });
+    gsap.from(ul4Ref.current.querySelectorAll("li"), {
+      opacity: 0,
+      y: 50,
+      // duration: 1,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: ul4Ref.current,
+        start: "top 80%",
+        // markers: true,
         end: "bottom 20%",
         toggleActions: "play none none none",
       },
@@ -74,22 +102,22 @@ export default function Header() {
                 height={400}
               />
             </div>
-            <div className="text-center p-6 lg:text-start">
-              <ul className="list-disc pl-6" ref={ulRef}>
-                <li className="py-2 text-lg">démontage d’arbres🌴</li>
-                <li className="py-2 text-lg">entretien de jardins ♻</li>
-                <li className="py-2 text-lg">création de jardin</li>
-                <li className="py-2 text-lg">broyage</li>
-                <li className="py-2 text-lg">débroussaillage</li>
-                <li className="py-2 text-lg">tonte de gazon</li>
-                <li className="py-2 text-lg">élagage</li>
-                <li className="py-2 text-lg">taille de haie</li>
+            <div className="text-start">
+              <ul className="pl-2 text-start" ref={ulRef}>
+                <li className="py-2 text-lg">Démontage d’arbres</li>
+                <li className="py-2 text-lg">Entretien de jardins</li>
+                <li className="py-2 text-lg">Création de jardin</li>
+                <li className="py-2 text-lg">Broyage</li>
+                <li className="py-2 text-lg">Débroussaillage</li>
+                <li className="py-2 text-lg">Tonte de gazon</li>
+                <li className="py-2 text-lg">Élagage</li>
+                <li className="py-2 text-lg">Taille de haie</li>
               </ul>
             </div>
           </div>
           <div>
             <div className="lg:flex flex-row-reverse">
-              <h4 className="font-serif font-bold p-4 m-2 lg:mr-20 text-xl border-b-2 border-black max-w-max">Aménagements extérieurs 🏗</h4>
+              <h4 className="font-serif font-bold p-4 m-2 lg:mr-20 text-xl border-b-2 border-black max-w-max">Aménagements extérieurs</h4>
             </div>
             <div className="lg:flex lg:justify-around items-center">
               <div className="m-4 rounded-lg max-h-[400px] overflow-hidden shadow-[1px_1px_13px_black]">
@@ -101,9 +129,9 @@ export default function Header() {
                   height={400}
                 />
               </div>
-              <ul className="list-disc pl-6" ref={ul2Ref}>
+              <ul className="text-center" ref={ul2Ref}>
                 <li className="py-2 text-lg">Terrain de boules</li>
-                <li className="py-2 text-lg">Enrochements</li>
+                <li className="py-2 text-lg">Enrochement</li>
                 <li className="py-2 text-lg">Création chemin d'acces</li>
                 <li className="py-2 text-lg">Enlevement de souches</li>
                 <li className="py-2 text-lg">Piscine</li>
@@ -123,15 +151,15 @@ export default function Header() {
         <div className="lg:flex w-full justify-around lg:pl-6 bg-white">
           <div>
             {/* <h4 className="font-serif font-bold p-4 m-2 text-xl">notre savoir faire :</h4> */}
-            <ul className="list-disc p-4 pl-6">
+            <ul className="p-4 pl-6 text-end" ref={ul3Ref}>
               <li className="py-2">Fondation habitation</li>
               <li className="py-2">Nivellement de terrain</li>
               <li className="py-2">Réalisation emplacement piscine</li>
-              <li className="py-2">V.R.D</li>
+              <li className="py-2">V.R.D.</li>
               <li className="py-2">Fosse septique</li>
             </ul>
-            <p className="text-lg font-serif pl-4">Evacuation :</p>
-            <ul className="list-disc p-6">
+            <p className="text-lg font-serif font-semibold text-center">Evacuation :</p>
+            <ul className="p-6 text-end" ref={ul4Ref}>
               <li className="py-2">Végétaux</li>
               <li className="py-2">Terre</li>
               <li className="py-2">Gravats</li>

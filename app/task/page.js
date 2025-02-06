@@ -36,7 +36,7 @@ export default function page() {
             <div className="fixed w-screen h-[45vh] -z-10">
                 <Image className="opacity-80 object-cover" src={"/la_foret.jpg"} alt="la fôret" fill />
                 <div className='moveTitle flex flex-col font-serif z-10 h-full w-full justify-center items-center text-3xl lg:text-5xl text-white'>
-                    <h3 className="z-10 uppercase mt-20">Nos réalisation</h3>
+                    <h3 className="z-10 uppercase mt-20">Nos réalisations</h3>
                 </div>
             </div>
             <div className="pt-[50vh] grid md:grid-cols-2 z-10">

@@ -12,7 +12,7 @@ L.Icon.Default.mergeOptions({
   shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
 });
 
-const center = [43.425536, 5.584927]; // Remplacez par la latitude et la longitude de l'adresse de l'entreprise
+const center = [43.425853, 5.587394]; // Remplacez par la latitude et la longitude de l'adresse de l'entreprise
 
 const LeafletMapComponent = () => {
   return (

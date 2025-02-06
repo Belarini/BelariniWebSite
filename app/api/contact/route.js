@@ -21,7 +21,7 @@ export async function POST(req) {
   // Configuration du message à envoyer
   const mailOptions = {
     from: process.env.MAIL_USERNAME, // Adresse e-mail d'envoi
-    to: 'guiwilh@gmail.com', // Adresse e-mail du destinataire
+    to: 'belariniespacesverts@gmail.com', // Adresse e-mail du destinataire
     subject: `Nouveau message de ${name}`,
     text: `Nom: ${name}\nEmail: ${email}\nMessage: ${message}`,
   };
