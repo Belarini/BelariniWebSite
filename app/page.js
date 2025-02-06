@@ -30,7 +30,7 @@ export default function Header() {
     gsap.from(ulRef.current.querySelectorAll("li"), {
       opacity: 0,
       y: 50,
-      // duration: 1,
+      duration: 1,
       stagger: 0.2,
       // scrollTrigger: {
       //   trigger: ulRef.current,
