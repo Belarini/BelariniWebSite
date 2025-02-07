@@ -4,7 +4,7 @@ import { doAdmin } from "../api/addTask/action";
 import { use, useEffect, useState } from 'react'
 
 export default function page() {
-    const [userAdmin, setUserAdmin] = useState(true);
+    const [userAdmin, setUserAdmin] = useState(false);
     const [password, setPassword] = useState("");
     const [tasks, setTasks] = useState([]);
     // -----------------------------------------
