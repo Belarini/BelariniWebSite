@@ -82,7 +82,7 @@ export default function page() {
                 <div className="flex flex-col items-center mt-[50vh] bg-white z-20 text-xl p-6">
                     <div className="p-2"><Image src={'/belariniLogo.png'} alt="logo entreprise" width={200} height={200} /></div>
                     <div className="p-2">06 65 30 03 55</div>
-                    <div className="p-2">belarini@gmail.com</div>
+                    <div className="p-2">belariniespacesverts@gmail.com</div>
                 </div>
                 <div className="self-start p-2 text-sm border-b-2 bg-white z-20 font-serif">Avec notre formulaire :</div>
                 <div className='flex flex-col sm:flex-row bg-white z-20'>

@@ -40,3 +40,20 @@ export async function POST(req) {
     return NextResponse.json({ success: false, message: "Échec de l'upload" }, { status: 500 });
   }
 }
+// -----------------------------------------
+export async function DELETE(req) {
+    try {
+        const { public_id } = await req.json();
+
+        const result = await cloudinary.uploader.destroy(public_id);
+
+        if (result.result !== 'ok') {
+            throw new Error('Erreur lors de la suppression de l\'image');
+        }
+
+        return NextResponse.json({ success: true });
+    } catch (error) {
+        console.error('Erreur lors de la suppression de l\'image:', error);
+        return NextResponse.json({ success: false, message: 'Échec de la suppression de l\'image' }, { status: 500 });
+    }
+}

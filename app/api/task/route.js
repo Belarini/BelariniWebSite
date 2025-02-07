@@ -28,16 +28,16 @@ export async function GET(req, res) {
 //         return NextResponse.json(err)
 //     }
 // }
-// export async function DELETE(req, res) {
-//     try {
-//         const data = await req.json()
-//         const userName = data.name
-//         const query = 'DELETE FROM users WHERE name = ?';
-//         const result = await connection.query(query, userName)
-//         return NextResponse.json({message: 'user deleted'}, {status: 200})
-//     }
-//     catch (err) {
-//         console.log(err);
-//         return NextResponse.json(err)
-//     }
-// }
+export async function DELETE(req) {
+    try {
+        const { id } = await req.json();
+
+        const query = 'DELETE FROM task WHERE id = ?';
+        await pool.query(query, [id]);
+
+        return NextResponse.json({ message: 'Tâche supprimée' }, { status: 200 });
+    } catch (error) {
+        console.error('Erreur lors de la suppression de la tâche:', error);
+        return NextResponse.json({ message: 'Échec de la suppression de la tâche' }, { status: 500 });
+    }
+}
