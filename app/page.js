@@ -62,7 +62,7 @@ export default function Header() {
     });
     gsap.from(ulHRef.current, {
       opacity: 0,
-      x: 150,
+      y: 150,
       scrollTrigger: {
         trigger: ulHRef.current,
        start: "top 110%",
