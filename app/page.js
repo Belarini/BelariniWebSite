@@ -122,7 +122,7 @@ export default function Header() {
   return (
     <div className="flex items-center flex-col relative font-roboto font-sans">
       <section className="pt-[18vh] z-10 w-full flex flex-col items-center">
-        <h1 className="font-serif text-gray-900 font-bold text-4xl uppercase p-4 m-4 border-b-2 border-black">espaces verts</h1>
+        <h1 className="font-serif text-gray-900 font-bold text-3xl uppercase p-4 m-4 border-b-2 border-black">espaces verts</h1>
         <div className="w-full lg:pl-6 bg-white">
           <h4 className="font-serif font-bold p-4 m-2 text-xl border-b-2 border-black max-w-max">notre savoir faire :</h4>
           <div className="lg:flex flex-row-reverse lg:justify-around items-center p-4">
@@ -180,7 +180,7 @@ export default function Header() {
         </div>
       </section>
       <section className="w-full flex flex-col items-center">
-        <h1 className="font-serif text-gray-900 font-bold text-4xl uppercase p-4 m-4 border-b-2 border-black">Terrassement</h1>
+        <h1 className="font-serif text-gray-900 font-bold text-3xl uppercase p-4 m-4 border-b-2 border-black">Terrassement</h1>
         <div className="lg:flex w-full justify-around lg:pl-6 bg-white">
           <div className="">
             <ul className="p-4 pl-6" ref={ul3Ref}>
