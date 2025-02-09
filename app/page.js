@@ -120,7 +120,7 @@ export default function Header() {
 
 
   return (
-    <div className="flex items-center flex-col relative font-serif">
+    <div className="flex items-center flex-col relative font-roboto font-sans">
       <section className="pt-[18vh] z-10 w-full flex flex-col items-center">
         <h1 className="font-serif text-gray-900 font-bold text-4xl uppercase p-4 m-4 border-b-2 border-black">espaces verts</h1>
         <div className="w-full lg:pl-6 bg-white">
@@ -198,7 +198,7 @@ export default function Header() {
               <li className="py-2 text-lg">D.I.B</li>
             </ul>
           </div>
-          <div ref={img1Ref} className="m-4 rounded-lg max-h-[400px] overflow-hidden shadow-[1px_1px_13px_black]">
+          <div ref={img1Ref} className="m-4 rounded-lg max-w-[full]  max-h-[395px] overflow-hidden shadow-[1px_1px_13px_black]">
             <Image
               className="opacity-100 object-cover rounded-lg"
               src={'/terrassement.webp'}

@@ -68,7 +68,7 @@ export default function page() {
 
     return (
         <div>
-            <div className="pt-[16vh]">
+            <div className="pt-[18vh]">
                 <div className="relative">
                     <div className="fixed w-screen h-[50vh] -z-10">
                         <Image className="opacity-80" src={'/foret_contact.jpg'} alt='chemin en forêt' layout='fill' objectFit='cover' />

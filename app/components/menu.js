@@ -16,9 +16,9 @@ export default function Menu() {
     }, [isOpen]);
 
     return (
-        <nav className="fixed z-30 bg-white flex lg:justify-around justify-between items-center w-screen font-serif font-extrabold uppercase text-lg">
+        <nav className="fixed h-[18vh] z-30 bg-white flex lg:justify-around justify-between items-center w-screen font-serif font-extrabold uppercase text-lg">
             <Link className="w-[200px] text-center p-3" href={'/'}>
-                <Image src={"/belariniLogo.png"} alt="belarini Logo" width={200} height={100} />
+                <Image src={"/belariniLogo.png"} alt="belarini Logo" width={150} height={100} />
             </Link>
             <ul className="hidden md:flex gap-10">
                 <Link className="w-[150px] text-center p-3 border-[3px] border-transparent hover:border-black" href={'/'}>Accueil</Link>
