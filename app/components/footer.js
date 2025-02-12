@@ -54,7 +54,6 @@ export default function footer() {
                     <span className="inline-block">I</span>
                     <span className="inline-block">N</span>
                     <span className="inline-block">I</span>
-                    {/* <span className="inline-block">.</span> */}
                 </div>
             </div>
             <ul className="flex flex-col font-serif text-sm">

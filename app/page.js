@@ -124,7 +124,7 @@ export default function Header() {
       <section className="pt-[18vh] z-10 w-full flex flex-col items-center">
         <h1 className="font-serif text-gray-900 font-bold text-3xl uppercase p-4 m-4 border-b-2 border-black">espaces verts</h1>
         <div className="w-full lg:pl-6 bg-white">
-          <h4 className="font-serif font-bold p-4 m-2 text-xl border-b-2 border-black max-w-max">notre savoir faire :</h4>
+          <div className="font-serif font-bold p-4 m-2 text-lg border-b-2 border-black max-w-max uppercase">Notre savoir faire :</div>
           <div className="lg:flex flex-row-reverse lg:justify-around items-center p-4">
             <div ref={imgRef} className="m-2 rounded-lg shadow-[1px_1px_13px_black]">
               <Image
@@ -150,7 +150,7 @@ export default function Header() {
           </div>
           <div>
             <div className="lg:flex flex-row-reverse">
-              <h4 className="font-serif font-bold p-4 m-2 lg:mr-20 text-xl border-b-2 border-black max-w-max">Aménagements extérieurs</h4>
+              <div className="font-serif font-bold p-4 m-2 lg:mr-20 text-lg border-b-2 border-black max-w-max uppercase">Aménagements extérieurs</div>
             </div>
             <div className="lg:flex lg:justify-around items-center">
               <div ref={img0Ref} className="m-4 rounded-lg max-h-[400px] overflow-hidden shadow-[1px_1px_13px_black]">
@@ -190,7 +190,7 @@ export default function Header() {
               <li className="py-2 text-lg">V.R.D.</li>
               <li className="py-2 text-lg">Fosse septique</li>
             </ul>
-            <p ref={ulHRef} className="text-lg font-serif font-semibold text-center">Évacuation :</p>
+            <p ref={ulHRef} className="text-xl font-serif font-semibold text-center">Évacuation :</p>
             <ul className="p-6" ref={ul4Ref}>
               <li className="py-2 text-lg">Végétaux</li>
               <li className="py-2 text-lg">Terre</li>

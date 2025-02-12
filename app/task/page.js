@@ -43,59 +43,66 @@ export default function page() {
                     <h3 className="z-10 uppercase mt-20">Nos réalisations</h3>
                 </div>
             </div>
-            <div className="pt-[50vh] grid md:grid-cols-2 z-10">
-                {tasks.map((task, index) => {
-                    // console.log('task', task);
-                    
-                    return (
-                        <div key={index} className="w-full items-center gap-3 max-h-max p-4 bg-white min-h-[125%]">
-                            <h2 className="font-serif max-w-max p-4 shadow-sm text-3xl border-b-2 border-black m-6">{task.title}</h2>
-                            <div className="justify-self-center flex w-full lg:w-2/3 h-[30vh] rounded-xl shadow-[1px_1px_13px_black] my-4 relative box">
-                                <Image
-                                    src={`${task.imageUrl}`}
-                                    className="rounded-xl object-cover"
-                                    alt={task.title}
-                                    fill
-                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
-                                    // 
-                                    onClick={(e) => {
-                                        setIsOpen(true)
-                                        setIsOpenModal(tasks[index].imageUrl)
-                                    }}
-                                    style={{ cursor: "pointer" }}
-                                />
-                                {/*  */}
-                                {isOpen && (
-                                    <div
-                                        onClick={() => setIsOpen(false)}
-                                        style={{
-                                            position: "fixed", top: 30, left: 0, width: "100vw", height: "100vh",
-                                            background: "rgba(0,0,0,0.8)", display: "flex", justifyContent: "center", alignItems: "center"
-                                        }}
-                                    >
-                                        <Image
-                                            src={`${isOpenModal}`}
-                                            alt="Image agrandie"
-                                            width={1000}
-                                            height={600}
-                                        />
-                                    </div>
-                                )}
-                                {/*  */}
-                            </div>
+            {/* ----------------------------------------------- */}
+            {tasks ?
+                <div className="pt-[50vh] grid md:grid-cols-2 z-10">
+                    {tasks.map((task, index) => {
+                        // console.log('task', task);
 
-                            {task.description ?
-                                <p className="font-serif min-h-[12%] p-4 justify-center text-center">{task.description}</p>
-                                :
-                                <div className="p-4 min-h-[12%] justify-center"></div>
-                            }
-                        </div>
-                    );
-                })}
-                {tasks.length % 2 !== 0 && (
-                    <div className="hidden lg:block w-full items-center gap-3 max-h-max p-4 bg-white min-h-[125%]"></div>
-                )}
-            </div>
+                        return (
+                            <div key={index} className="w-full items-center gap-3 max-h-max p-4 bg-white min-h-[125%]">
+                                <h2 className="font-serif max-w-max p-4 shadow-sm text-3xl border-b-2 border-black m-6">{task.title}</h2>
+                                <div className="justify-self-center flex w-full lg:w-2/3 h-[30vh] rounded-xl shadow-[1px_1px_13px_black] my-4 relative box">
+                                    <Image
+                                        src={`${task.imageUrl}`}
+                                        className="rounded-xl object-cover"
+                                        alt={task.title}
+                                        fill
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
+                                        // 
+                                        onClick={(e) => {
+                                            setIsOpen(true)
+                                            setIsOpenModal(tasks[index].imageUrl)
+                                        }}
+                                        style={{ cursor: "pointer" }}
+                                    />
+                                    {/*  */}
+                                    {isOpen && (
+                                        <div
+                                            onClick={() => setIsOpen(false)}
+                                            style={{
+                                                position: "fixed", top: 30, left: 0, width: "100vw", height: "100vh",
+                                                background: "rgba(0,0,0,0.8)", display: "flex", justifyContent: "center", alignItems: "center"
+                                            }}
+                                        >
+                                            <Image
+                                                src={`${isOpenModal}`}
+                                                alt="Image agrandie"
+                                                width={1000}
+                                                height={600}
+                                            />
+                                        </div>
+                                    )}
+                                    {/*  */}
+                                </div>
+
+                                {task.description ?
+                                    <p className="font-serif min-h-[12%] p-4 justify-center text-center">{task.description}</p>
+                                    :
+                                    <div className="p-4 min-h-[12%] justify-center"></div>
+                                }
+                            </div>
+                        );
+                    })}
+                    {tasks.length % 2 !== 0 && (
+                        <div className="hidden lg:block w-full items-center gap-3 max-h-max p-4 bg-white min-h-[125%]"></div>
+                    )}
+
+                </div>
+                :
+                <div className="pt-[50vh] h-[150vh] text-center text-xl font-serif z-10">Chargement...</div>
+            }
+            {/* --------------------------------------------- */}
         </div>
     );
 }
