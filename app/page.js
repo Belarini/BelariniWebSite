@@ -128,7 +128,7 @@ export default function Header() {
           <div className="lg:flex flex-row-reverse lg:justify-around items-center p-4">
             <div ref={imgRef} className="m-2 rounded-lg shadow-[1px_1px_13px_black]">
               <Image
-                className="opacity-90 object-cover rounded-lg"
+                className="object-cover rounded-lg"
                 src={'/escalier_jardin.jpg'}
                 alt="Espaces verts"
                 width={800}
@@ -155,7 +155,7 @@ export default function Header() {
             <div className="lg:flex lg:justify-around items-center">
               <div ref={img0Ref} className="m-4 rounded-lg max-h-[400px] overflow-hidden shadow-[1px_1px_13px_black]">
                 <Image
-                  className="opacity-100 object-cover rounded-lg"
+                  className="object-cover rounded-lg"
                   src={'/boulodrome_fini.jpg'}
                   alt="Boulodrome"
                   width={800}
@@ -200,7 +200,7 @@ export default function Header() {
           </div>
           <div ref={img1Ref} className="m-4 rounded-lg max-w-[full]  max-h-[395px] overflow-hidden shadow-[1px_1px_13px_black]">
             <Image
-              className="opacity-100 object-cover rounded-lg"
+              className="object-cover rounded-lg"
               src={'/terrassement.webp'}
               alt="terrassement"
               width={800}

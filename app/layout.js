@@ -5,7 +5,7 @@ import Footer from "./components/footer";
 import Script from 'next/script';
 import CookieConsent from './components/cookieCosent';
 
-const GA_MEASUREMENT_ID = 'G-VZ0GRT9TK4, GT-T5R83JRW'; // Remplacez par votre ID
+const GA_MEASUREMENT_ID = 'G-VZ0GRT9TK4'; // Remplacez par votre ID, GT-T5R83JRW
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
