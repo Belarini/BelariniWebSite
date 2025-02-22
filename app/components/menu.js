@@ -23,6 +23,7 @@ export default function Menu() {
             <ul className="hidden md:flex gap-10">
                 <Link className="w-[150px] text-center p-3 border-[3px] border-transparent hover:border-black" href={'/'}>Accueil</Link>
                 <Link className="w-[150px] text-center p-3 border-[3px] border-transparent hover:border-black" href={'/task'}>Travaux</Link>
+                <Link className="w-[150px] text-center p-3 border-[3px] border-transparent hover:border-black" href={'/apropos'}>A propos</Link>
                 <Link className="w-[150px] text-center p-3 border-[3px] border-transparent hover:border-black" href={'/contact'}>Contact</Link>
                 <div className="flex items-center">
                     <Link aria-label="menu admin" className=" text-center p-3 border-[3px] border-transparent hover:border-black" href={'/admin'}><RiAdminFill /></Link>
@@ -35,6 +36,7 @@ export default function Menu() {
                 <ul className="flex flex-col left-0 items-center border-x-2 border-b-2">
                     <Link onClick={() => setIsOpen(false)} className="w-[150px] text-center p-3 border-[3px] border-transparent hover:border-black" href={'/'}>Accueil</Link>
                     <Link onClick={() => setIsOpen(false)} className="w-[150px] text-center p-3 border-[3px] border-transparent hover:border-black" href={'/task'}>Travaux</Link>
+                    <Link onClick={() => setIsOpen(false)} className="w-[150px] text-center p-3 border-[3px] border-transparent hover:border-black" href={'/apropos'}>A propos</Link>
                     <Link onClick={() => setIsOpen(false)} className="w-[150px] text-center p-3 border-[3px] border-transparent hover:border-black" href={'/contact'}>Contact</Link>
                     <div>
                         <Link onClick={() => setIsOpen(false)} aria-label="menu admin" className="w-[150px] text-center p-3 border-[3px] border-transparent hover:border-black" href={'/admin'}><RiAdminFill /></Link>

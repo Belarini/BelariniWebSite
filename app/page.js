@@ -4,7 +4,6 @@ import gsap from "gsap";
 import { useRef, useEffect } from "react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
-
 export default function Header() {
 
   const ulRef = useRef(null);
@@ -54,7 +53,7 @@ export default function Header() {
       stagger: 0.2,
       scrollTrigger: {
         trigger: ul3Ref.current,
-       start: "top 110%",
+        start: "top 110%",
         end: "bottom 90%",
         toggleActions: "play none none none",
         scrub: 2,
@@ -65,7 +64,7 @@ export default function Header() {
       y: 150,
       scrollTrigger: {
         trigger: ulHRef.current,
-       start: "top 110%",
+        start: "top 110%",
         end: "bottom 90%",
         toggleActions: "play none none none",
         scrub: 2,
@@ -78,7 +77,7 @@ export default function Header() {
       scrollTrigger: {
         trigger: ul4Ref.current,
         // markers: true,
-       start: "top 110%",
+        start: "top 110%",
         end: "bottom 90%",
         // toggleActions: "play none none none",
         scrub: 2,
@@ -95,7 +94,7 @@ export default function Header() {
       duration: 1,
       scrollTrigger: {
         trigger: img0Ref.current,
-       start: "top 110%",
+        start: "top 110%",
         end: "bottom 90%",
         // markers: true,
         scrub: 2,
@@ -107,7 +106,7 @@ export default function Header() {
       duration: 1,
       scrollTrigger: {
         trigger: img1Ref.current,
-       start: "top 110%",
+        start: "top 110%",
         end: "bottom 90%",
         // markers: true,
         // scrub: 0,

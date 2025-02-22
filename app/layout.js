@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Menu from "./components/menu";
 import Footer from "./components/footer";
@@ -7,13 +7,8 @@ import CookieConsent from './components/cookieCosent';
 
 const GA_MEASUREMENT_ID = 'G-VZ0GRT9TK4'; // Remplacez par votre ID, GT-T5R83JRW
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jetBrainsMono = JetBrains_Mono({
+  weight: '400',
   subsets: ["latin"],
 });
 
@@ -54,7 +49,7 @@ export default function RootLayout({ children }) {
       {/* --------------------------------- */}
 
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased dark:bg-white dark:text-black`}
+        className={`${jetBrainsMono.className} antialiased dark:bg-white dark:text-black`}
       >
         <Menu />
         {children}
