@@ -1,26 +1,43 @@
 'use client'
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-
+import { TaskContext } from "../components/taskContext";
 
 export default function page() {
 
+    const { tasks } = useContext(TaskContext)
     gsap.registerPlugin(ScrollTrigger);
-    const [tasks, setTasks] = useState([]);
+    // const [tasks, setTasks] = useState([]);
 
     const [isOpen, setIsOpen] = useState(false);
     const [isOpenModal, setIsOpenModal] = useState('');
 
-
+    let img = []
+    //VERIFIER QUE L'addTask fonctionne toujours
     useEffect(() => {
-        fetch('/api/task')
-            .then(res => res.json())
-            .then(data => {
-                setTasks(data);
-            });
+        img = document.querySelectorAll('.img-move')
+        // fetch('/api/task')
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         setTasks(data);
+        //     });
         console.log('test', tasks);
+        console.log("MODULO", tasks.length % 2 !== 0);
+
+        gsap.fromTo(img, {
+            opacity: 0,
+            y: -50,
+            duration: 0.5,
+            stagger: 1,
+        },
+            {
+                opacity: 1,
+                y: 0,
+            }
+        )
+
         gsap.to('.moveTitle', {
             y: -300,
             opacity: 0,
@@ -55,7 +72,7 @@ export default function page() {
                                 <div className="justify-self-center flex w-full lg:w-2/3 h-[30vh] rounded-xl shadow-[1px_1px_13px_black] my-4 relative box">
                                     <Image
                                         src={`${task.imageUrl}`}
-                                        className="rounded-xl object-cover"
+                                        className="rounded-xl object-cover img-move"
                                         alt={task.title}
                                         fill
                                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
@@ -95,7 +112,7 @@ export default function page() {
                         );
                     })}
                     {tasks.length % 2 !== 0 && (
-                        <div className="hidden lg:block w-full items-center gap-3 max-h-max p-4 bg-white min-h-[125%]"></div>
+                        <div className="lg:block w-full items-center gap-3 max-h-max p-4 bg-white min-h-[125%]"></div>
                     )}
 
                 </div>

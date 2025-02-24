@@ -1,11 +1,13 @@
 'use client';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { TaskContext } from './taskContext';
 
 export default function AddTask() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
+  const { tasks, setTasks } = useContext(TaskContext)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,7 +20,8 @@ export default function AddTask() {
       const imageData = new FormData();
       imageData.append('file', image);
       imageData.append('upload_preset', 'mon_preset'); // 🔥 Remplace par ton preset Cloudinary
-
+      console.log(imageData);
+      
       // 2️⃣ Envoyer l’image à Cloudinary
       const cloudinaryResponse = await fetch(
 
@@ -49,6 +52,15 @@ export default function AddTask() {
       setTitle('');
       setDescription('');
       setImage(null);
+      //---------------MAJ de TASKS-----------
+      try {
+        const res = await fetch("/api/task"); // Remplace par ton endpoint réel
+        const data = await res.json();
+        setTasks(data);
+      } catch (error) {
+        console.error("Erreur lors de la récupération des tâches", error);
+      }
+      //-----------------------------------------
     } else {
       console.log(response);
       alert('Erreur lors de l’ajout de la tâche.');

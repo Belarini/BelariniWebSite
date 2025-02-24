@@ -4,6 +4,7 @@ import Menu from "./components/menu";
 import Footer from "./components/footer";
 import Script from 'next/script';
 import CookieConsent from './components/cookieCosent';
+import { TaskProvider } from "./components/taskContext";
 
 const GA_MEASUREMENT_ID = 'G-VZ0GRT9TK4'; // Remplacez par votre ID, GT-T5R83JRW
 
@@ -52,7 +53,7 @@ export default function RootLayout({ children }) {
         className={`${jetBrainsMono.className} antialiased dark:bg-white dark:text-black`}
       >
         <Menu />
-        {children}
+        <TaskProvider>{children}</TaskProvider>
         <CookieConsent />
         <Footer />
       </body>

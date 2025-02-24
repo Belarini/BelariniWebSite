@@ -17,7 +17,6 @@ export async function POST(req) {
     const title = formData.get('title')
     const description = formData.get('description')
     const imageUrl = formData.get('imageUrl')
-    // console.log('formData', formData);
     const connection = await pool.getConnection();
     console.log('Database connection established');
     await connection.query('INSERT INTO task (title, description, imageUrl) VALUES (?, ?, ?)', [title, description, imageUrl]);

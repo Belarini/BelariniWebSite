@@ -5,7 +5,7 @@ import { useRef, useEffect } from "react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 export default function Header() {
-
+  
   const ulRef = useRef(null);
   const ul2Ref = useRef(null);
   const ul3Ref = useRef(null);

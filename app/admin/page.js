@@ -1,12 +1,15 @@
 'use client'
 import AddTask from "../components/addtask";
 import { doAdmin } from "../api/addTask/action";
-import { use, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
+import { TaskContext } from "../components/taskContext";
 
 export default function page() {
     const [userAdmin, setUserAdmin] = useState(false);
     const [password, setPassword] = useState("");
-    const [tasks, setTasks] = useState([]);
+    // const [tasks, setTasks] = useState([]);
+    const { tasks, setTasks } = useContext(TaskContext);
+
     // -----------------------------------------
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [taskToDelete, setTaskToDelete] = useState(null);
@@ -29,11 +32,10 @@ export default function page() {
         const response = await doAdmin({ password })
 
         if (response === true) {
-            console.log('ok');
+
             setUserAdmin(true);
             setPassword("");
         } else {
-            console.log('non');
             alert("Mauvais mot de passe");
         }
     };
@@ -51,17 +53,25 @@ export default function page() {
 
         try {
             // Supprimer l'image de Cloudinary
-            const public_id_rework = taskToDelete.imageUrl.split('image')
-            const public_id = public_id_rework[1].split('/')
+            if (taskToDelete.imageUrl) {
+                
+                const public_id_rework = taskToDelete.imageUrl.split('image')
+                const public_id = public_id_rework[1].split('/')
 
-            let fileName = public_id[4].replace(/(\.jpg)+$/, ".jpg")
-            const result = `${public_id[3]}/${fileName}`
+                //supprime le doublon .jpg .png etc...
+                let fileNameTEST = public_id[4]
+                const fileModif = fileNameTEST.split(".")
+                const r = fileModif[0] + '.' + fileModif[1];
+                const result = `${public_id[3]}/${r}`
 
-            
-            await fetch('/api/upload', {
-                method: 'DELETE',
-                body: JSON.stringify({ public_id: result }),
-            });
+                const decodedResult = decodeURIComponent(result);
+                console.log(decodedResult);
+                
+                await fetch('/api/upload', {
+                    method: 'DELETE',
+                    body: JSON.stringify({ public_id: decodedResult }),
+                });
+            }
 
             // Supprimer la tâche de la base de données
             // -----------------------------------------

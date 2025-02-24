@@ -71,7 +71,7 @@ export default function page() {
             scrollTrigger: {
                 trigger: img3Ref.current,
                 start: "top 110%",
-                end: "bottom 90%",
+                end: "bottom 80%",
                 // markers: true,
                 scrub: 2,
             },
@@ -79,7 +79,7 @@ export default function page() {
     }, []);
 
     return (
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center text-lg">
             <div className="mt-[18vh] relative w-full">
                 <div className="w-full h-[30vh] -z-10">
                     <Image
@@ -97,9 +97,9 @@ export default function page() {
             <section className="z-10 md:w-[80%] flex flex-col items-center">
                 <div className="p-2">
                     <p>
-                        <span className="font-bold underline p-4 inline-block">Notre zone d'intervention dans le Var et les Bouches-du-Rhône</span>
+                        <span className="font-bold underline p-4 inline-block text-xl">Notre zone d'intervention dans le Var et les Bouches-du-Rhône</span>
                         La société
-                        <span className="font-serif text-xl p-2"> Belarini </span>
+                        <span className="font-serif font-bold text-xl p-2"> Belarini </span>
                         intervient principalement sur Aubagne, Saint Maximun, Aix en Provence et dans les communes alentours, dans un rayon de 50 kilomètres autour de Belcodène.
                         Nous nous déplaçons dans le Var (83)
                         du côté de Saint Maximin la Sainte-Baume ou les Bouches-du-Rhône (13) pour réaliser tous vos travaux.
@@ -133,7 +133,7 @@ export default function page() {
                     N'hésitez pas à nous contacter même si vous n'apparaissez pas dans cette liste. Nous étudierons la faisabilité du chantier et pourront certainement nous déplacer sans frais supplémentaires.
                 </div>
                 <div className="p-2">
-                    <h2 className="py-2 font-bold">Nos prestations d'élagage et services associés</h2>
+                    <h2 className="py-2 font-bold text-xl underline">Nos prestations d'élagage et services associés</h2>
                     <p>
                         En tant que professionnels de l'élagage et de l'entretien des arbres, nous vous proposons une gamme complète de services pour répondre à tous vos besoins. Nous adaptons nos techniques et notre matériel à chaque situation pour une prestation sur-mesure et de qualité.
                         Élagage et taille douce des arbres
@@ -151,7 +151,7 @@ export default function page() {
                                         ref={img0Ref}
                                         src={'/tailleHarmonie.png'}
                                         alt="taille harmonieuse"
-                                        className="rounded-xl shadow-[1px_1px_13px_black] my-4"
+                                        className="rounded-xl shadow-[1px_1px_13px_black] my-4 flex-1"
                                         height={400}
                                         width={500}
                                     />
@@ -164,7 +164,7 @@ export default function page() {
                                         ref={img1Ref}
                                         src={'/tailleEntretien.png'}
                                         alt="taille d'une haie"
-                                        className="rounded-xl shadow-[1px_1px_13px_black] my-4"
+                                        className="rounded-xl shadow-[1px_1px_13px_black] my-4 flex-1"
                                         height={400}
                                         width={500}
                                     />
@@ -177,7 +177,7 @@ export default function page() {
                                         ref={img2Ref}
                                         src={'/altitude.png'}
                                         alt="taille d'arbre en altitude"
-                                        className="rounded-xl shadow-[1px_1px_13px_black] my-4"
+                                        className="rounded-xl shadow-[1px_1px_13px_black] my-4 flex-1"
                                         height={400}
                                         width={500}
                                     />
@@ -190,7 +190,7 @@ export default function page() {
                                         ref={img3Ref}
                                         src={'/tailleDouce.png'}
                                         alt="taille douce"
-                                        className="rounded-xl shadow-[1px_1px_13px_black] my-4"
+                                        className="rounded-xl shadow-[1px_1px_13px_black] my-4 flex-1"
                                         height={400}
                                         width={500}
                                     />

@@ -10,7 +10,6 @@ export async function doAdmin({ password }) {
 
     // Vérifiez le contenu de FormData
     const data = password;
-    console.log(data);
     
     console.log(data === mdp);
     if(data === mdp){
