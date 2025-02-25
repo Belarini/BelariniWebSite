@@ -207,7 +207,7 @@ export default function page() {
             {userAdmin === false ?
                 <div className="flex flex-col justify-center items-center pl-4 pt-[18vh] h-[82vh]">
                     <form className="flex flex-col" onSubmit={handleChange}>
-                        <label className="font-serif p-4 m-2">Mdp Admin :</label>
+                        <label className="font-bold border-b-2 border-black mb-4 p-4 m-2">Mdp Admin</label>
                         <input
                             className="border-2 p-2 ml-4 rounded-lg"
                             type="password"

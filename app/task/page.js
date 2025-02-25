@@ -68,7 +68,7 @@ export default function page() {
 
                         return (
                             <div key={index} className="w-full items-center gap-3 max-h-max p-4 bg-white min-h-[125%]">
-                                <h2 className="font-serif max-w-max p-4 shadow-sm text-3xl border-b-2 border-black m-6">{task.title}</h2>
+                                <h2 className="max-w-max p-4 shadow-sm text-3xl border-b-2 border-black m-6">{task.title}</h2>
                                 <div className="justify-self-center flex w-full lg:w-2/3 h-[30vh] rounded-xl shadow-[1px_1px_13px_black] my-4 relative box">
                                     <Image
                                         src={`${task.imageUrl}`}
@@ -104,7 +104,7 @@ export default function page() {
                                 </div>
 
                                 {task.description ?
-                                    <p className="font-serif min-h-[12%] p-4 justify-center text-center">{task.description}</p>
+                                    <p className="min-h-[12%] p-4 justify-center text-center">{task.description}</p>
                                     :
                                     <div className="p-4 min-h-[12%] justify-center"></div>
                                 }
@@ -117,7 +117,7 @@ export default function page() {
 
                 </div>
                 :
-                <div className="pt-[50vh] h-[150vh] text-center text-xl font-serif z-10">Chargement...</div>
+                <div className="pt-[50vh] h-[150vh] text-center text-xl z-10">Chargement...</div>
             }
             {/* --------------------------------------------- */}
         </div>

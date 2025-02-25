@@ -84,7 +84,7 @@ export default function page() {
                     <div className="p-2">06 65 30 03 55</div>
                     <div className="p-2">belariniespacesverts@gmail.com</div>
                 </div>
-                <div className="self-start p-2 text-sm border-b-2 bg-white z-20 font-serif">Avec notre formulaire :</div>
+                <div className="self-start p-2 text-sm border-b-2 bg-white z-20 font-serif"></div>
                 <div className='flex flex-col sm:flex-row bg-white z-20'>
                     <div className="flex flex-col  sm:w-1/2 sm:p-20 p-10">
                         <form className="flex gap-3 flex-col text-xl" action={handleSubmit}>

@@ -119,11 +119,11 @@ export default function Header() {
 
 
   return (
-    <div className="flex items-center flex-col relative font-roboto font-sans">
+    <div className="flex items-center flex-col relative">
       <section className="pt-[18vh] z-10 w-full flex flex-col items-center">
-        <h1 className="font-serif text-gray-900 font-bold text-3xl uppercase p-4 m-4 border-b-2 border-black">espaces verts</h1>
+        <h1 className="text-gray-900 font-bold text-3xl uppercase p-4 m-4 border-b-2 border-black">espaces verts</h1>
         <div className="w-full lg:pl-6 bg-white">
-          <div className="font-serif font-bold p-4 m-2 text-lg border-b-2 border-black max-w-max uppercase">Notre savoir faire :</div>
+          <div className="font-bold p-4 m-2 text-lg border-b-2 border-black max-w-max uppercase">Notre savoir faire :</div>
           <div className="lg:flex flex-row-reverse lg:justify-around items-center p-4">
             <div ref={imgRef} className="m-2 rounded-lg shadow-[1px_1px_13px_black]">
               <Image
@@ -149,7 +149,7 @@ export default function Header() {
           </div>
           <div>
             <div className="lg:flex flex-row-reverse">
-              <div className="font-serif font-bold p-4 m-2 lg:mr-20 text-lg border-b-2 border-black max-w-max uppercase">Aménagements extérieurs</div>
+              <div className="font-bold p-4 m-2 lg:mr-20 text-lg border-b-2 border-black max-w-max uppercase">Aménagements extérieurs</div>
             </div>
             <div className="lg:flex lg:justify-around items-center">
               <div ref={img0Ref} className="m-4 rounded-lg max-h-[400px] overflow-hidden shadow-[1px_1px_13px_black]">
@@ -179,17 +179,17 @@ export default function Header() {
         </div>
       </section>
       <section className="w-full flex flex-col items-center">
-        <h1 className="font-serif text-gray-900 font-bold text-3xl uppercase p-4 m-4 border-b-2 border-black">Terrassement</h1>
+        <h1 className="text-gray-900 font-bold text-3xl uppercase p-4 m-4 border-b-2 border-black">Terrassement</h1>
         <div className="lg:flex w-full justify-around lg:pl-6 bg-white">
           <div className="">
             <ul className="p-4 pl-6" ref={ul3Ref}>
-              <li className="py-2 text-lg">Fondation habitation</li>
+              <li className="py-2 text-lg">Fondations habitation</li>
               <li className="py-2 text-lg">Nivellement de terrain</li>
               <li className="py-2 text-lg">Réalisation emplacement piscine</li>
               <li className="py-2 text-lg">V.R.D.</li>
               <li className="py-2 text-lg">Fosse septique</li>
             </ul>
-            <p ref={ulHRef} className="text-xl font-serif font-semibold text-center">Évacuation :</p>
+            <p ref={ulHRef} className="text-xl font-semibold text-center">Évacuation :</p>
             <ul className="p-6" ref={ul4Ref}>
               <li className="py-2 text-lg">Végétaux</li>
               <li className="py-2 text-lg">Terre</li>
