@@ -16,17 +16,18 @@ export default function Menu() {
     }, [isOpen]);
 
     return (
-        <nav className="fixed h-[18vh] z-30 bg-white flex lg:justify-around justify-between items-center w-screen font-serif font-extrabold uppercase text-lg">
+        <nav className="fixed h-[18vh] z-30 bg-white flex lg:justify-around justify-between items-center w-[99%] font-serif font-extrabold uppercase text-lg">
             <Link className="w-[200px] text-center p-3" href={'/'}>
+            {/* <Link className="w-[200px] text-center p-3" href={'/'}> */}
                 <Image src={"/belariniLogo.png"} alt="belarini Logo" width={150} height={100} />
             </Link>
             <ul className="hidden md:flex gap-10">
-                <Link className="w-[150px] text-center p-3 border-[3px] border-transparent hover:border-black" href={'/'}>Accueil</Link>
-                <Link className="w-[150px] text-center p-3 border-[3px] border-transparent hover:border-black" href={'/task'}>Travaux</Link>
-                <Link className="w-[150px] text-center p-3 border-[3px] border-transparent hover:border-black" href={'/apropos'}>A propos</Link>
-                <Link className="w-[150px] text-center p-3 border-[3px] border-transparent hover:border-black" href={'/contact'}>Contact</Link>
+                <Link className="w-[130px] text-center p-3 border-[3px] border-transparent hover:border-black" href={'/'}>Accueil</Link>
+                <Link className="w-[130px] text-center p-3 border-[3px] border-transparent hover:border-black" href={'/task'}>Travaux</Link>
+                <Link className="w-[130px] text-center p-3 border-[3px] border-transparent hover:border-black" href={'/apropos'}>A propos</Link>
+                <Link className="w-[130px] text-center p-3 border-[3px] border-transparent hover:border-black" href={'/contact'}>Contact</Link>
                 <div className="flex items-center">
-                    <Link aria-label="menu admin" className=" text-center p-3 border-[3px] border-transparent hover:border-black" href={'/admin'}><RiAdminFill /></Link>
+                    <Link aria-label="menu admin" className="w-[50px] text-center p-3 border-[3px] border-transparent hover:border-black" href={'/admin'}><RiAdminFill /></Link>
                 </div>
             </ul>
             <button aria-label="menu" className="md:hidden p-6 mr-4" onClick={() => setIsOpen(!isOpen)}>

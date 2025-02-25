@@ -11,6 +11,8 @@ export const TaskProvider = ({ children }) => {
       try {
         const res = await fetch("/api/task"); // Remplace par ton endpoint
         const data = await res.json();
+        console.log("data", data);
+        
         setTasks(data);
       } catch (error) {
         console.error("Erreur lors de la récupération des tâches", error);

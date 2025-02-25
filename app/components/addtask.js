@@ -70,18 +70,18 @@ export default function AddTask() {
   };
 
   return (
-    <form onSubmit={handleSubmit} encType="multipart/form-data">
-      <div className='flex flex-col'>
-        <label className='font-serif text-xl w-[100px]'>Localisation</label>
+    <form className='flex flex-col items-center w-[95%]' onSubmit={handleSubmit} encType="multipart/form-data">
+      <div className='flex flex-col justify-center'>
+        <label className='font-serif text-lg lg:text-2xl w-full'>Localisation</label>
         <input className="border-2 p-2 rounded-lg" type="text" value={title} onChange={(e) => setTitle(e.target.value)} required />
       </div>
       <div className='flex flex-col'>
-        <label className='font-serif text-xl w-[100px]'>Description</label>
+        <label className='font-serif text-lg lg:text-2xl w-full'>Description</label>
         <input className="border-2 p-2 rounded-lg" type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
       </div>
-      <div className='flex flex-col'>
-        <label className='font-serif text-xl w-[100px]'>Photo</label>
-        <input id='image' type="file" accept="image/*" onChange={(e) => setImage(e.target.files[0])} />
+      <div className='flex flex-col items-center w-[100%]'>
+        <label className='font-serif text-lg lg:text-2xl w-3/4 lg:w-1/2'>Photo</label>
+        <input className='text-xs lg:text-lg' id='image' type="file" accept="image/*" onChange={(e) => setImage(e.target.files[0])} />
       </div>
       <button className="m-6 p-2 bg-gray-200 hover:bg-gray-300 rounded-xl" type="submit" disabled={loading}>
         {loading ? 'Envoi...' : 'Soumettre'}
